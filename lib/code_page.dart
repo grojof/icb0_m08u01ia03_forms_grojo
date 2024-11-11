@@ -5,7 +5,7 @@ import 'package:icb0_m08u01ia03_forms_grojo/sources/custom_fields.dart';
 import 'package:icb0_m08u01ia03_forms_grojo/sources/dynamic_fields.dart';
 import 'package:icb0_m08u01ia03_forms_grojo/sources/related_fields.dart';
 import 'package:icb0_m08u01ia03_forms_grojo/sources/signup_form.dart';
-import 'package:icb0_m08u01ia03_forms_grojo/widgets/main_scaffold.dart';
+import 'package:icb0_m08u01ia03_forms_grojo/widgets/widgets.dart';
 
 class CodePage extends StatelessWidget {
   final String title;

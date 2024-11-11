@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
+import 'package:icb0_m08u01ia03_forms_grojo/widgets/widgets.dart';
 
 class FormAView extends StatelessWidget {
   final _formKey = GlobalKey<FormBuilderState>();
@@ -14,24 +15,7 @@ class FormAView extends StatelessWidget {
           if (_formKey.currentState?.saveAndValidate() ?? false) {
             showDialog(
               context: context,
-              builder: (context) {
-                return AlertDialog(
-                  icon: const Icon(
-                    Icons.check_circle,
-                    color: Colors.green,
-                  ),
-                  title: const Text('Submission Completed'),
-                  content: Text(_formKey.currentState?.value.toString() ?? ''),
-                  actions: [
-                    TextButton(
-                      onPressed: () {
-                        Navigator.of(context).pop();
-                      },
-                      child: const Text('Close'),
-                    ),
-                  ],
-                );
-              },
+              builder: (context) => SubmissionDialog(formKey: _formKey),
             );
           }
         },

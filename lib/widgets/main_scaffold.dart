@@ -16,7 +16,7 @@ class MainScaffold extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(title),
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.blueAccent[100],
       ),
       body: body,
     );

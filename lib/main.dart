@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:icb0_m08u01ia03_forms_grojo/views/form_a_view.dart';
-import 'package:icb0_m08u01ia03_forms_grojo/widgets/main_scaffold.dart';
+import 'package:icb0_m08u01ia03_forms_grojo/views/form_b_view.dart';
+import 'package:icb0_m08u01ia03_forms_grojo/views/form_c_view.dart';
+import 'package:icb0_m08u01ia03_forms_grojo/views/form_d_view.dart';
+import 'package:icb0_m08u01ia03_forms_grojo/widgets/widgets.dart';
 import 'code_page.dart';
 
 void main() => runApp(const MyApp());
@@ -12,16 +15,17 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: 'Flutter FormBuilder Demo',
       debugShowCheckedModeBanner: false,
-      localizationsDelegates: [
+      theme: ThemeData(colorSchemeSeed: Colors.blueAccent),
+      localizationsDelegates: const [
         FormBuilderLocalizations.delegate,
         ...GlobalMaterialLocalizations.delegates,
         GlobalWidgetsLocalizations.delegate,
       ],
       supportedLocales: FormBuilderLocalizations.supportedLocales,
-      home: _HomePage(),
+      home: const _HomePage(),
     );
   }
 }
@@ -66,7 +70,7 @@ class _HomePage extends StatelessWidget {
                 MaterialPageRoute(
                   builder: (context) => const MainScaffold(
                     title: 'Form B',
-                    body: SizedBox(), // Reemplaza con el contenido de Form B
+                    body: FormBView(),
                   ),
                 ),
               );
@@ -78,9 +82,9 @@ class _HomePage extends StatelessWidget {
             onTap: () {
               Navigator.of(context).push(
                 MaterialPageRoute(
-                  builder: (context) => const MainScaffold(
+                  builder: (context) => MainScaffold(
                     title: 'Form C',
-                    body: SizedBox(), // Reemplaza con el contenido de Form C
+                    body: FormCView(),
                   ),
                 ),
               );
@@ -92,9 +96,9 @@ class _HomePage extends StatelessWidget {
             onTap: () {
               Navigator.of(context).push(
                 MaterialPageRoute(
-                  builder: (context) => const MainScaffold(
+                  builder: (context) => MainScaffold(
                     title: 'Form D',
-                    body: SizedBox(), // Reemplaza con el contenido de Form D
+                    body: FormDView(),
                   ),
                 ),
               );
